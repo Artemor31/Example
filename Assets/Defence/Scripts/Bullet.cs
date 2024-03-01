@@ -1,11 +1,14 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+namespace Defence.Scripts
 {
-    public float Speed;
-
-    private void Update()
+    public class Bullet : MonoBehaviour
     {
-        transform.Translate(Vector3.up * Time.deltaTime * Speed);
+        public float Speed;
+
+        private void Update()
+        {
+            transform.Translate(Vector3.up * (Time.deltaTime * Speed));
+        }
     }
 }

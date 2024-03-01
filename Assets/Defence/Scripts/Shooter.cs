@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class Shooter : MonoBehaviour
+namespace Defence.Scripts
 {
-    public Bullet Bullet;
-
-    void Update()
+    public class Shooter : MonoBehaviour
     {
-        if (Input.GetMouseButtonUp(0))
+        public Bullet Bullet;
+
+        void Update()
         {
-            Bullet clone = Instantiate(Bullet, transform.position, Quaternion.Euler(90, 0, 0));
+            if (Input.GetMouseButtonUp(0))
+            {
+                Bullet clone = Instantiate(Bullet, transform.position, Quaternion.Euler(90, 0, 0));
+            }
         }
     }
 }

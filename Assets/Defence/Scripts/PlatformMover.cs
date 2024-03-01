@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class PlatformMover : MonoBehaviour
+namespace Defence.Scripts
 {
-    public float Speed;
-    public float JumpPower;
-    private Rigidbody _rigidbody;
-
-    private void Start()
+    public class PlatformMover : MonoBehaviour
     {
-        _rigidbody = GetComponent<Rigidbody>();
-    }
+        public float Speed;
+        public float JumpPower;
+        private Rigidbody _rigidbody;
 
-    void Update()
-    {
-        var hor = Input.GetAxis("Horizontal");
-        var ver = Input.GetAxis("Vertical");
-
-        transform.Translate(new Vector3(hor, 0, ver) * Time.deltaTime * Speed);
-
-        if (Input.GetKeyUp(KeyCode.Space))
+        private void Start()
         {
-            _rigidbody.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+            _rigidbody = GetComponent<Rigidbody>();
+        }
+
+        private void Update()
+        {
+            float hor = Input.GetAxis("Horizontal");
+            float ver = Input.GetAxis("Vertical");
+
+            transform.Translate(new Vector3(hor, 0, ver) * (Time.deltaTime * Speed));
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                _rigidbody.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+            }
         }
     }
 }

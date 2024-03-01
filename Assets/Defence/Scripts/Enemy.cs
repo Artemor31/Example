@@ -1,17 +1,20 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Defence.Scripts
 {
-    public float Speed;
-
-    void Update()
+    public class Enemy : MonoBehaviour
     {
-        transform.Translate(Vector3.back * Time.deltaTime * Speed);
-    }
+        public float Speed;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+        private void Update()
+        {
+            transform.Translate(Vector3.back * (Time.deltaTime * Speed));
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
