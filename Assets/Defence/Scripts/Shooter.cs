@@ -10,7 +10,7 @@ namespace Defence.Scripts
         {
             if (Input.GetMouseButtonUp(0))
             {
-                Bullet clone = Instantiate(Bullet, transform.position, Quaternion.Euler(90, 0, 0));
+                Bullet clone = Instantiate(Bullet, transform.position, transform.rotation);
             }
         }
     }

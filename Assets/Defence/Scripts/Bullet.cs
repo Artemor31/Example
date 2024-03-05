@@ -8,7 +8,7 @@ namespace Defence.Scripts
 
         private void Update()
         {
-            transform.Translate(Vector3.up * (Time.deltaTime * Speed));
+            transform.Translate(Vector3.forward * (Time.deltaTime * Speed));
         }
     }
 }
