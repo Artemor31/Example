@@ -13,8 +13,11 @@ namespace Defence.Scripts
 
         private void OnTriggerEnter(Collider other)
         {
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            if (other.GetComponent<Bullet>() != null)
+            {
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 }

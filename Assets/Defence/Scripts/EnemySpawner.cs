@@ -23,9 +23,9 @@ namespace Defence.Scripts
                 _timer = Delay;
 
                 int x = Random.Range(-14, 14);
-                float y = Random.Range(0, 2) == 0 ? 1 : 5;
+                int y = Random.Range(0, 2) == 0 ? 1 : 5;
 
-                Vector3 position = new Vector3(x, y, 30);
+                Vector3Int position = new Vector3Int(x, y, 30);
                 Enemy clone = Instantiate(Enemy, position, Quaternion.identity);
             }
         }

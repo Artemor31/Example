@@ -6,13 +6,8 @@ namespace Defence.Scripts
     {
         public float Speed;
         public float JumpPower;
-        private Rigidbody _rigidbody;
-
-        private void Start()
-        {
-            _rigidbody = GetComponent<Rigidbody>();
-        }
-
+        public Rigidbody Rigidbody;
+        
         private void Update()
         {
             float hor = Input.GetAxis("Horizontal");
@@ -22,7 +17,7 @@ namespace Defence.Scripts
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-                _rigidbody.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
+                Rigidbody.AddForce(Vector3.up * JumpPower, ForceMode.Impulse);
             }
         }
     }
